@@ -50,7 +50,13 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\PlayerInput.cs" />
+     <Compile Include="Assets\Scripts\Movement.cs" />
+     <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\PlayerCollision.cs" />
+     <Compile Include="Assets\Scripts\LookDirectionController.cs" />
+     <Compile Include="Assets\Scripts\PlayerAnimation.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/Documents - data drive/GitHub/Repositories/GroupProject4/Project 4/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
