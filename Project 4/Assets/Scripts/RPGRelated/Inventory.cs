@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public delegate void ItemCountChanged(Item item);
 public class Inventory : MonoBehaviour
@@ -77,12 +78,12 @@ public class Inventory : MonoBehaviour
         }
     }
 
-   /* private void Start()
+   private void Awake()
     {
-        Bag bag = (Bag)Instantiate(items[1]);
-        bag.Initailize(18);
+        Bag bag = (Bag)Instantiate(items[0]);
+        bag.Initailize(18); //how many slots to initialize
         bag.Use();
-    }*/
+    }
     private void Update()
     {
         if (Input.GetButtonDown("UseBag")) //J
@@ -103,6 +104,10 @@ public class Inventory : MonoBehaviour
             AddItem((Weapon)Instantiate(items[1]));
             AddItem((Weapon)Instantiate(items[2]));
             AddItem((Weapon)Instantiate(items[3]));
+        }
+        if (Input.GetButtonDown("OpenCloseBag"))
+        {
+            Inventory.MyInstance.OpenClose();
         }
     }
     public void AddBag(Bag bag)
@@ -167,7 +172,22 @@ public class Inventory : MonoBehaviour
 
         return false; //It wasn't possible to stack the item
     }
+    public void OpenClose()
+    {
+        //Checks if any bags are closed
+        bool closedBag = bags.Find(x => !x.MyBagScript.IsOpen);
 
+        //If closed bag == true, then open all closed bags
+        //If closed bag == false, then close all open bags
+
+        foreach (Bag bag in bags)
+        {
+            if (bag.MyBagScript.IsOpen != closedBag)
+            {
+                bag.MyBagScript.OpenClose();
+            }
+        }
+    }
     public Stack<IUseable> GetUseables(IUseable type)
     {
         Stack<IUseable> useables = new Stack<IUseable>();

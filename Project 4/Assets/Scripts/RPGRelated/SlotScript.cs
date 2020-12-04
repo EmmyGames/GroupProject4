@@ -9,7 +9,7 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
     private ObservableStack<Item> items = new ObservableStack<Item>(); //to be able to "stack" items
 
     public Image icon;
-    public Image cover;
+    //public Image cover;
     public Text stackSize;
 
     public BagScript MyBag { get; set; }
@@ -73,13 +73,13 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
             return items;
         }
     }
-    public Image MyCover
+    /*public Image MyCover
     {
         get
         {
             return cover;
         }
-    }
+    }*/
     private void Awake()
     {
         //Assigns all the event on our observable stack to the updateSlot function
@@ -192,7 +192,7 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
     public void Clear()
     {
         int initCount = MyItems.Count;
-        MyCover.enabled = false;
+        //MyCover.enabled = false;
         if (initCount > 0)
         {
             for (int i = 0; i < initCount; i++)
@@ -224,7 +224,7 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
     }
     private bool PutItemBack()
     {
-        MyCover.enabled = false;
+        //MyCover.enabled = false;
         if (Inventory.MyInstance.FromSlot == this)
         {
             Inventory.MyInstance.FromSlot.MyIcon.enabled = true;
@@ -235,7 +235,7 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
 
     private bool SwapItems(SlotScript from)
     {
-        from.MyCover.enabled = false;
+        //from.MyCover.enabled = false;
         if (IsEmpty)
         {
             return false;

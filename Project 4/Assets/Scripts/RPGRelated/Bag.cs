@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 [CreateAssetMenu(fileName = "Bag", menuName = "Weapons/Bag", order = 1)]
 public class Bag : Item, IUseable
 {
@@ -30,7 +32,7 @@ public class Bag : Item, IUseable
     public void Use()
     {
         MyBagScript = Instantiate(bagPrefab, Inventory.MyInstance.transform).GetComponent<BagScript>() ;
-        MyBagScript.AddSlots(slots);
+        //MyBagScript.AddSlots(slots);
         //Inventory.MyInstance.AddBag(this);
     }
 }

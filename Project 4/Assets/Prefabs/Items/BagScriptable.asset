@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12930de14e63f564fb5b4231dbf73f4d, type: 3}
   m_Name: BagScriptable
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  name: 
+  icon: {fileID: 21300000, guid: f4c3754da61b3294abd72c72c7319b42, type: 3}
+  name: Bag
   attack: 0
   durability: 0
-  bagPrefab: {fileID: 1111532443010649872, guid: 4dd9ea1eaca79e340a4eb2c1620fc1d2, type: 3}
+  defense: 0
+  stackSize: 0
+  quality: 0
+  bagPrefab: {fileID: 541326755976406783, guid: a27f19368af2dbf48b51c39d1b2dbb09, type: 3}

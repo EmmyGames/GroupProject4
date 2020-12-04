@@ -1,16 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BagScript : MonoBehaviour
 {
     //creates bag and slots
     public GameObject slotPrefab;
 
+    //public GameObject CanvasGroupReference;
     private CanvasGroup canvasGroup;
 
     private List<SlotScript> slots = new List<SlotScript>();
-    public bool isOpen
+
+    public void Awake()
+    {
+        //canvasGroup = GetComponent<CanvasGroup>();
+    }
+    public bool IsOpen
     {
         get
         {
@@ -40,10 +47,6 @@ public class BagScript : MonoBehaviour
         }
     }
 
-    public void Awake()
-    {
-        canvasGroup = GetComponent<CanvasGroup>();
-    }
     public void AddSlots(int slotCount)
     {
         for (int i = 0; i < slotCount; i++)
@@ -70,5 +73,6 @@ public class BagScript : MonoBehaviour
         canvasGroup.alpha = canvasGroup.alpha > 0 ? 0 : 1; //if canvas group is 0 set to 0, else set to 1??
         canvasGroup.blocksRaycasts = canvasGroup.blocksRaycasts == true ? false : true; //if raycast blocking is true then set to false, else set to true
     }
+
     
 }

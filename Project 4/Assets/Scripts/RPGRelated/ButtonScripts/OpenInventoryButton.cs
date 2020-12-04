@@ -3,31 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.UI;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class OpenInventoryButton : MonoBehaviour, IPointerClickHandler
 {
-    private Bag bag;
+    public GameObject bagReference;
 
-    private Sprite full, empty;
-    private int inventoryIndex;
-    //private Sprite full, empty; - not doing full/empty
+    private Bag bag;
+    //public Sprite full, empty;
+    public int inventoryIndex;
+    BagScript bagScript;
+    void Start()
+    {
+        bagScript = bagReference.GetComponent<BagScript>();
+    }
     public Bag MyBag
     {
         get
         {
             return bag;
         }
-        set
+       set
         {
-            if (value != null)
+            /*if (value != null)
             {
                 GetComponent<Image>().sprite = full;
             }
             else
             {
                 GetComponent<Image>().sprite = empty;
-            }
+            }*/
             bag = value;
         }
     }
@@ -49,15 +53,22 @@ public class OpenInventoryButton : MonoBehaviour, IPointerClickHandler
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
+            bagScript.OpenClose();
             if (Inventory.MyInstance.FromSlot != null && HandScript.MyInstance.MyMoveable != null && HandScript.MyInstance.MyMoveable is Bag)
             {
+                //bag.MyBagScript.OpenClose();
+                /*
                 Bag tmp = (Bag)HandScript.MyInstance.MyMoveable;
                 tmp.MyInventoryButton = this;
                 tmp.Use();
-                MyBag = tmp;
+                //MyBag = tmp;
                 HandScript.MyInstance.Drop();
-                Inventory.MyInstance.FromSlot = null;
+                Inventory.MyInstance.FromSlot = null;*/
             }
+        }
+        /*else if (bag!= null) //if bag is equipped (which it should always be)
+        {
+            bag.MyBagScript.OpenClose();
         }
         /*else if (Input.GetButton)
         {
