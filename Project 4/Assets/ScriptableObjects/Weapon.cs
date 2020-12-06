@@ -4,23 +4,19 @@ using UnityEngine;
 
 public enum WeaponType {Melee, Range, Shield}
 
-[CreateAssetMenu(fileName = "New Weapon", menuName = "MeleeWeapon")]
+[CreateAssetMenu(fileName = "New Weapon", menuName = "Items/Weapon", order = 2)]
 public class Weapon : Item //since of type item it is a scriptable object
 {
     [SerializeField]
     private WeaponType weaponType;
 
-    [SerializeField]
-    private new string name;
+    public new string name;
 
-    [SerializeField]
-    private int attack;
+    public int attack;
 
-    [SerializeField]
-    private int durability;
+    public int durability;
 
-    [SerializeField]
-    private int defense; 
+    public int defense; 
 
     internal WeaponType MyWeaponType
     {

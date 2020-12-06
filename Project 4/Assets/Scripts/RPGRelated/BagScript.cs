@@ -9,13 +9,14 @@ public class BagScript : MonoBehaviour
     public GameObject slotPrefab;
 
     //public GameObject CanvasGroupReference;
-    private CanvasGroup canvasGroup;
+    public CanvasGroup canvasGroup;
 
     private List<SlotScript> slots = new List<SlotScript>();
 
     public void Awake()
     {
-        //canvasGroup = GetComponent<CanvasGroup>();
+        canvasGroup = GetComponent<CanvasGroup>();
+        Debug.Log("Hello");
     }
     public bool IsOpen
     {
@@ -52,7 +53,8 @@ public class BagScript : MonoBehaviour
         for (int i = 0; i < slotCount; i++)
         {
             SlotScript slot = Instantiate(slotPrefab, transform).GetComponent<SlotScript>();
-            slots.Add(slot); //all slots added to list
+            slot.MyBag = this;
+            MySlots.Add(slot); //all slots added to list
         }
     }
 
@@ -62,16 +64,19 @@ public class BagScript : MonoBehaviour
         {
             if (slot.IsEmpty)
             {
+                //Debug.Log("Add Item to slot");
                 slot.AddItem(item);
-                return true; 
+                return true;
             }
+
         }
         return false; //if bag is full then make false
     }
     public void OpenClose()
     {
-        canvasGroup.alpha = canvasGroup.alpha > 0 ? 0 : 1; //if canvas group is 0 set to 0, else set to 1??
-        canvasGroup.blocksRaycasts = canvasGroup.blocksRaycasts == true ? false : true; //if raycast blocking is true then set to false, else set to true
+        Debug.Log("Is this being called?");
+        canvasGroup.alpha = canvasGroup.alpha > 0 ? 0 : 1; //if 0 then set to 1, if 1 then set to 0
+        canvasGroup.blocksRaycasts = canvasGroup.blocksRaycasts == true ? false : true; //if raycast blocking is true then set to false, else set to true*/
     }
 
     

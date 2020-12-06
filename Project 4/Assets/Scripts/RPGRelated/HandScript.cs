@@ -19,11 +19,11 @@ public class HandScript : MonoBehaviour
             return instance;
         }
     }
-    public IMoveable MyMoveable { get; set; }
+    public IMoveable MyMoveable { get; set; } //current moveable
 
-    private Image icon; //icon over mouse
+    private Image icon; //icon we are moving around
 
-    public Vector3 offset;
+    public Vector3 offset; //offset to mouse icon off mouse
     void Start()
     {
         icon = GetComponent<Image>();
@@ -41,7 +41,7 @@ public class HandScript : MonoBehaviour
         
     }
 
-    public void TakeMoveable(IMoveable moveable)
+    public void TakeMoveable(IMoveable moveable) //take moveable in hand so that we can move it around
     {
         this.MyMoveable = moveable;
         icon.sprite = moveable.MyIcon;
@@ -52,7 +52,7 @@ public class HandScript : MonoBehaviour
     {
         IMoveable tmp = MyMoveable;
         MyMoveable = null;
-        icon.enabled = false;
+        icon.color = new Color(0, 0, 0, 0);
         return tmp;
     }
     public void Drop()

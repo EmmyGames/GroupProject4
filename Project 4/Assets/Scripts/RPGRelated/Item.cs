@@ -8,10 +8,13 @@ public abstract class Item : ScriptableObject, IMoveable, IDescribable
 {
     public Sprite icon;
 
-    public new string name;
+    //public new string name;
+    /*[SerializeField]
     public int attack;
+    [SerializeField]
     public int durability;
-    public int defense;
+    [SerializeField]
+    public int defense;*/
 
     private SlotScript slot;
     private CharacterButton characterButton;

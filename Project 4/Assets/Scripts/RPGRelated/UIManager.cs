@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     private static UIManager instance;
     public GameObject tooltip;
     private Text tooltipText;
+
+    [SerializeField]
     private RectTransform tooltipRect;
     public static UIManager MyInstance
     {
@@ -33,7 +35,13 @@ public class UIManager : MonoBehaviour
         if (Input.GetButtonDown("CharacterMenu"))
         {
             characterPanel.OpenClose();
+            Inventory.MyInstance.OpenClose();
             Debug.Log("pressing m");
+        }
+        if (Input.GetButtonDown("OpenCloseBag"))
+        {
+            Debug.Log("I am trying to close this now");
+            //Inventory.MyInstance.OpenClose();
         }
     }
 

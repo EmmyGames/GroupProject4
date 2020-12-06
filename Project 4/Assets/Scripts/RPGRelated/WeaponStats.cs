@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+//using TMPro;
 using UnityEngine.UI;
 
 public class WeaponStats : MonoBehaviour
 {
     public Weapon weapon;
-    public TextMeshProUGUI AttackValue;
-    public TextMeshProUGUI DurabilityValue;
+    public Text AttackValue;
+    public Text DurabilityValue;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,4 +19,4 @@ public class WeaponStats : MonoBehaviour
             DurabilityValue.text = "Durability: " + weapon.durability.ToString();
         }
     }
-}
+} 

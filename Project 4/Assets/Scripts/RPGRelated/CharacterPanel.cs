@@ -50,7 +50,7 @@ public class CharacterPanel : MonoBehaviour
                 range.EquipWeapon(weapon);
                 break;
             case WeaponType.Shield:
-                range.EquipWeapon(weapon);
+                shield.EquipWeapon(weapon);
                 break;
 
         }

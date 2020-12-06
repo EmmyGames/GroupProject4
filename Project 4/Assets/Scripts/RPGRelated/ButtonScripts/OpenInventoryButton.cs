@@ -12,6 +12,8 @@ public class OpenInventoryButton : MonoBehaviour, IPointerClickHandler
     //public Sprite full, empty;
     public int inventoryIndex;
     BagScript bagScript;
+    //Inventory inventoryScript;
+    public CharacterPanel characterPanel;
     void Start()
     {
         bagScript = bagReference.GetComponent<BagScript>();
@@ -53,9 +55,19 @@ public class OpenInventoryButton : MonoBehaviour, IPointerClickHandler
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
-            bagScript.OpenClose();
+            Debug.Log("Clicking");
+            //bagScript.OpenClose();
+            characterPanel.OpenClose();
+            Inventory.MyInstance.OpenClose();
+            /*if (bag!= null)
+            {
+                Debug.Log("Calling Open CLose");
+                bagScript.OpenClose();
+            }
+            //bagScript.OpenClose();
             if (Inventory.MyInstance.FromSlot != null && HandScript.MyInstance.MyMoveable != null && HandScript.MyInstance.MyMoveable is Bag)
             {
+                Debug.Log("Part 2 of button click");
                 //bag.MyBagScript.OpenClose();
                 /*
                 Bag tmp = (Bag)HandScript.MyInstance.MyMoveable;
@@ -63,8 +75,8 @@ public class OpenInventoryButton : MonoBehaviour, IPointerClickHandler
                 tmp.Use();
                 //MyBag = tmp;
                 HandScript.MyInstance.Drop();
-                Inventory.MyInstance.FromSlot = null;*/
-            }
+                Inventory.MyInstance.FromSlot = null;
+            }*/
         }
         /*else if (bag!= null) //if bag is equipped (which it should always be)
         {
@@ -75,4 +87,6 @@ public class OpenInventoryButton : MonoBehaviour, IPointerClickHandler
 
         }*/
     }
+
+
 }

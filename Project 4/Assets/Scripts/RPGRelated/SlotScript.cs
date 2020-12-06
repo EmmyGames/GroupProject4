@@ -161,6 +161,7 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
         items.Push(item);
         icon.sprite = item.MyIcon;
         icon.color = Color.white; //set alpha back to being seeable
+        item.MySlot = this;
         return true;
     }
     public bool AddItems(ObservableStack<Item> newItems)
@@ -224,7 +225,6 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
     }
     private bool PutItemBack()
     {
-        //MyCover.enabled = false;
         if (Inventory.MyInstance.FromSlot == this)
         {
             Inventory.MyInstance.FromSlot.MyIcon.enabled = true;
@@ -235,7 +235,6 @@ public class SlotScript : MonoBehaviour, IPointerClickHandler, IClickable, IPoin
 
     private bool SwapItems(SlotScript from)
     {
-        //from.MyCover.enabled = false;
         if (IsEmpty)
         {
             return false;
