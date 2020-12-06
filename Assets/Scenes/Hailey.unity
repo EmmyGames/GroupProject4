@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!225 &11673939 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: -5217715064852431438, guid: 4dd9ea1eaca79e340a4eb2c1620fc1d2, type: 3}
+  m_PrefabInstance: {fileID: 2067928612}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &157937406
 GameObject:
   m_ObjectHideFlags: 0
@@ -3000,6 +3005,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bag
       objectReference: {fileID: 0}
+    - target: {fileID: 1548792107544618775, guid: 4dd9ea1eaca79e340a4eb2c1620fc1d2, type: 3}
+      propertyPath: canvasGroup
+      value: 
+      objectReference: {fileID: 11673939}
     - target: {fileID: 3558128842195375589, guid: 4dd9ea1eaca79e340a4eb2c1620fc1d2, type: 3}
       propertyPath: m_StartCorner
       value: 0

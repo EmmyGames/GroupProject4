@@ -7,7 +7,7 @@ public class BagScript : MonoBehaviour
     //creates bag and slots
     public GameObject slotPrefab;
 
-    private CanvasGroup canvasGroup;
+    public CanvasGroup canvasGroup;
 
     private List<SlotScript> slots = new List<SlotScript>();
     public bool isOpen
@@ -42,7 +42,8 @@ public class BagScript : MonoBehaviour
 
     public void Awake()
     {
-        canvasGroup = GetComponent<CanvasGroup>();
+        //canvasGroup = GetComponent<CanvasGroup>();
+        Debug.Log(canvasGroup.alpha);
     }
     public void AddSlots(int slotCount)
     {
