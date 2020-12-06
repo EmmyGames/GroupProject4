@@ -13,14 +13,11 @@ MonoBehaviour:
   m_Name: Stick
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: d25a99ec0dad38c409b37850fd1c186e, type: 3}
-  name: Stick
-  attack: 2
-  durability: 2
-  defense: 0
-  stackSize: 0
+  stackSize: 3
+  title: Wooden Club
   quality: 0
   weaponType: 0
-  name: Stick
+  name: Wooden Club
   attack: 2
   durability: 2
   defense: 0
