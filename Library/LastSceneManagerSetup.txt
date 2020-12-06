@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Hailey.unity
+=======
+- path: Assets/Scenes/SampleScene.unity
+>>>>>>> ece93196ed6e0036f3f4d009cbc580c707cd5a33
   isLoaded: 1
   isActive: 1
   isSubScene: 0
