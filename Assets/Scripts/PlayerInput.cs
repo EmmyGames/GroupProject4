@@ -14,6 +14,8 @@ public class PlayerInput : MonoBehaviour
     public float moveZ;
 
     public bool isJumping;
+
+    public bool isAttacking;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,5 +36,6 @@ public class PlayerInput : MonoBehaviour
             isSprinting = false || Input.GetButton("Sprint");
         
         isJumping = false || Input.GetButton("Jump");
+        isAttacking = false || Input.GetButton("Attack");
     }
 }

@@ -172,6 +172,7 @@
      <None Include="Assets\DreamForestTree\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
      <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\Bloom.shader" />
      <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\Uber.shader" />
+     <None Include="Assets\Free medieval weapons\README.txt" />
      <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\DreamForestTree\PostProcessing\Resources\Shaders\TAA.shader" />
