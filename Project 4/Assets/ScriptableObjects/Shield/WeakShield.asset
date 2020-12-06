@@ -13,14 +13,11 @@ MonoBehaviour:
   m_Name: WeakShield
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: b6e3f6e1edb2b9a43838ca0816a92306, type: 3}
-  name: Wooden Shield
+  stackSize: 0
+  title: Weak Shield
+  quality: 0
+  weaponType: 2
+  name: Weak Shield
   attack: 0
   durability: 0
   defense: 2
-  stackSize: 0
-  quality: 0
-  weaponType: 2
-  name: 
-  attack: 0
-  durability: 0
-  defense: 0

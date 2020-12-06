@@ -13,14 +13,11 @@ MonoBehaviour:
   m_Name: IronRod
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: ea65d17bf8f79e142a2affc8e26418eb, type: 3}
-  name: Iron Rod
-  attack: 4
-  durability: 4
-  defense: 0
-  stackSize: 0
-  quality: 0
+  stackSize: 3
+  title: Rusty Sword
+  quality: 1
   weaponType: 0
-  name: Iron Rod
+  name: Rusty Sword
   attack: 4
   durability: 4
   defense: 0

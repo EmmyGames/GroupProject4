@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     public GameObject tooltip;
     private Text tooltipText;
 
+    public CanvasGroup infoCanvas;
+
     [SerializeField]
     private RectTransform tooltipRect;
     public static UIManager MyInstance
@@ -27,6 +29,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         tooltipText = tooltip.GetComponentInChildren<Text>();
+        //infoCanvas = GetComponent<CanvasGroup>();
     }
 
     // Update is called once per frame
@@ -38,10 +41,9 @@ public class UIManager : MonoBehaviour
             Inventory.MyInstance.OpenClose();
             Debug.Log("pressing m");
         }
-        if (Input.GetButtonDown("OpenCloseBag"))
+        if (Input.GetButtonDown("OpenCloseInfo"))
         {
-            Debug.Log("I am trying to close this now");
-            //Inventory.MyInstance.OpenClose();
+            InfoOpenClose();
         }
     }
 
@@ -83,5 +85,11 @@ public class UIManager : MonoBehaviour
     public void RefreshTooltip(IDescribable description)
     {
         tooltipText.text = description.GetDescription();
+    }
+
+    public void InfoOpenClose()
+    {
+        infoCanvas.alpha =  infoCanvas.alpha > 0 ? 0 : 1; //if 0 then set to 1, if 1 then set to 0
+        infoCanvas.blocksRaycasts = infoCanvas.blocksRaycasts == true ? false : true; //if raycast blocking is true then set to false, else set to true*/
     }
 }

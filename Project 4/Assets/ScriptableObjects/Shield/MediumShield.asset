@@ -13,14 +13,11 @@ MonoBehaviour:
   m_Name: MediumShield
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: dde6e91c8f4ee5541a5caf18114da3af, type: 3}
-  name: Copper Shield
-  attack: 0
-  durability: 0
-  defense: 6
   stackSize: 0
+  title: Wooden Shield
   quality: 1
   weaponType: 2
-  name: 
+  name: Wooden Shield
   attack: 0
   durability: 0
-  defense: 0
+  defense: 4

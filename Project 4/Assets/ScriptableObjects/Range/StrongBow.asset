@@ -13,14 +13,11 @@ MonoBehaviour:
   m_Name: StrongBow
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 63878642f24e571479fef36e3604941f, type: 3}
-  name: Iron Bow
-  attack: 6
-  durability: 6
-  defense: 0
-  stackSize: 0
+  stackSize: 3
+  title: Crossbow
   quality: 2
   weaponType: 1
-  name: 
-  attack: 0
-  durability: 0
+  name: Crossbow
+  attack: 6
+  durability: 6
   defense: 0

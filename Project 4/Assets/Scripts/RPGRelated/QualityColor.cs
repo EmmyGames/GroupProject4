@@ -9,7 +9,7 @@ public static class QualityColor
 {
     private static Dictionary<Quality, string> colors = new Dictionary<Quality, string>()
     {
-        {Quality.Common, "#ffffffff" },
+        {Quality.Common, "#9EC5AB" },
         {Quality.Uncommon, "#00ff00ff"},
         {Quality.Rare, "#0E6BECFF" },
         {Quality.Epic, "#A712D8FF"},

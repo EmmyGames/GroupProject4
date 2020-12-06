@@ -115,6 +115,11 @@ public class Inventory : MonoBehaviour
             AddItem((Weapon)Instantiate(items[2]));
             AddItem((Weapon)Instantiate(items[3]));
             AddItem((Weapon)Instantiate(items[4]));
+            AddItem((Weapon)Instantiate(items[5]));
+            AddItem((Weapon)Instantiate(items[6]));
+            AddItem((Weapon)Instantiate(items[7]));
+            AddItem((Weapon)Instantiate(items[8]));
+            AddItem((Weapon)Instantiate(items[9]));
         }
     }
     /*public void AddBag(Bag bag)

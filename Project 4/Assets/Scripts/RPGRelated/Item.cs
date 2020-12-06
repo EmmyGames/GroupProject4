@@ -19,7 +19,10 @@ public abstract class Item : ScriptableObject, IMoveable, IDescribable
     private SlotScript slot;
     private CharacterButton characterButton;
     public int stackSize;
+
+    [SerializeField]
     private string title;
+
     public Quality quality;
     public Sprite MyIcon
     {
@@ -72,15 +75,15 @@ public abstract class Item : ScriptableObject, IMoveable, IDescribable
             characterButton = value;
         }
     }
+    public virtual string GetDescription()
+    {
+        return string.Format("<color={0}>{1}</color>", QualityColor.MyColors[MyQuality], MyTitle);
+    }
     public void Remove()
     {
         if (MySlot != null)
         {
             MySlot.RemoveItem(this);
         }
-    }
-    public virtual string GetDescription()
-    {
-        return string.Format("<color={0}>{1}</color>", QualityColor.MyColors[MyQuality], MyTitle);
     }
 }

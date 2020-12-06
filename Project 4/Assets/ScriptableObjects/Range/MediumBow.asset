@@ -13,14 +13,11 @@ MonoBehaviour:
   m_Name: MediumBow
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: a099da3dd6c55464785d0e64ab8485e7, type: 3}
-  name: Copper Bow
-  attack: 4
-  durability: 4
-  defense: 0
-  stackSize: 0
+  stackSize: 3
+  title: Bow
   quality: 1
   weaponType: 1
-  name: 
-  attack: 0
-  durability: 0
+  name: Bow
+  attack: 4
+  durability: 4
   defense: 0

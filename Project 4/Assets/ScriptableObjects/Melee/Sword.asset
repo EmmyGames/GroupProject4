@@ -13,14 +13,11 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: afd73a1db344ade40a4404d59b775679, type: 3}
-  name: Sword
+  stackSize: 3
+  title: Steel Sword
+  quality: 2
+  weaponType: 0
+  name: Steel Sword
   attack: 6
   durability: 6
-  defense: 0
-  stackSize: 0
-  quality: 0
-  weaponType: 0
-  name: 
-  attack: 0
-  durability: 0
   defense: 0
