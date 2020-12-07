@@ -24,7 +24,6 @@ public class Weapon : Item //since of type item it is a scriptable object
         {
             return weaponType;
         }
-
     }
 
     public override string GetDescription() //weapon is of type item and in item (an interface) and the get description in item is the default description to this is overriding the other one to make it mean this instead
