@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     private Text tooltipText;
 
     public CanvasGroup infoCanvas;
+    public CanvasGroup cursorCanvas;
 
     [SerializeField]
     private RectTransform tooltipRect;
@@ -39,6 +40,7 @@ public class UIManager : MonoBehaviour
         {
             characterPanel.OpenClose();
             Inventory.MyInstance.OpenClose();
+            CursorOpenClose();
             Debug.Log("pressing m");
         }
         if (Input.GetButtonDown("OpenCloseInfo"))
@@ -91,5 +93,11 @@ public class UIManager : MonoBehaviour
     {
         infoCanvas.alpha =  infoCanvas.alpha > 0 ? 0 : 1; //if 0 then set to 1, if 1 then set to 0
         infoCanvas.blocksRaycasts = infoCanvas.blocksRaycasts == true ? false : true; //if raycast blocking is true then set to false, else set to true*/
+    }
+
+    public void CursorOpenClose()
+    {
+        cursorCanvas.alpha = cursorCanvas.alpha > 0 ? 0 : 1; //if 0 then set to 1, if 1 then set to 0
+        cursorCanvas.blocksRaycasts = cursorCanvas.blocksRaycasts == true ? false : true; //if raycast blocking is true then set to false, else set to true*/
     }
 }

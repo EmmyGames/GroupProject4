@@ -11,6 +11,15 @@ public class CharacterButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
 
     private Weapon equippedWeapon;
 
+    public VFXController vfxControl;
+
+    public StatsWindow statsWindow;
+
+    public Weapon getWeapon()
+    {
+        return this.equippedWeapon;
+    }
+
     public Image icon;
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -51,7 +60,8 @@ public class CharacterButton : MonoBehaviour, IPointerClickHandler, IPointerEnte
         icon.color = Color.white;
         this.equippedWeapon = weapon; //reference to equipped weapon
         this.equippedWeapon.MyCharacterButton = this;
-
+        StartCoroutine(vfxControl.Play());
+        //StatsWindow.ChangeText();
         if (HandScript.MyInstance.MyMoveable == (weapon as IMoveable))
         {
             HandScript.MyInstance.Drop();
