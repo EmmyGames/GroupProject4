@@ -703,9 +703,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 799a396135d769040a7bd21904ccc5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
-  AttackValue: {fileID: 0}
-  DurabilityValue: {fileID: 0}
+  weapon: {fileID: 11400000, guid: 5ef1bd1df512cd6489869f1c08acf2d0, type: 2}
+  AttackValue: {fileID: 332840255}
+  DurabilityValue: {fileID: 332840255}
 --- !u!135 &279821756
 SphereCollider:
   m_ObjectHideFlags: 0

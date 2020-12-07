@@ -35,6 +35,9 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         
         _direction = new Vector3(playerScript.playerInput.moveX, 0f, playerScript.playerInput.moveZ).normalized;
-        movement.EntityMovement(isGrounded, playerScript.playerInput.isSprinting, playerScript.playerInput.isJumping, lookDirTransform, _startCamRotation, _direction);
+        
+        if(!playerScript.playerAnimation.anim.GetBool(playerScript.playerAnimation.shouldMove))
+            _direction = Vector3.zero;
+        movement.EntityMovement(isGrounded, playerScript.playerInput.isSprinting, playerScript.playerInput.isJumping, lookDirTransform, _startCamRotation, _direction, playerScript.playerInput.isAttacking, playerScript.playerInput.isADS);
     }
 }

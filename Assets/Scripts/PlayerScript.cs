@@ -6,9 +6,11 @@ public class PlayerScript : MonoBehaviour
 {
     public PlayerInput playerInput;
     public PlayerMovement playerMovement;
+    public PlayerStats playerStats;
     public PlayerCollision playerCollision;
     public PlayerAnimation playerAnimation;
 
+    public Transform weaponTransform;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +21,15 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Make sure nothing else goes below this
-        if (!Input.GetKeyDown(KeyCode.Escape))
+        if (playerInput.toggleMouse)
         {
-            return;
+            if(Cursor.lockState == CursorLockMode.Locked)
+                Cursor.lockState = CursorLockMode.None;
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            Cursor.visible = !Cursor.visible;
         }
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
     }
 }

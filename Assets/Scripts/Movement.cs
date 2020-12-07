@@ -38,17 +38,14 @@ public class Movement : MonoBehaviour
         speed = walkSpeed;
     }
 
-    public void EntityMovement(bool isGrounded, bool isSprinting, bool isJumping, Transform lookDirTransform, float startRotation, Vector3 direction)
+    public void EntityMovement(bool isGrounded, bool isSprinting, bool isJumping, Transform lookDirTransform, float startRotation, Vector3 direction, bool isAttacking, bool isADS)
     {
-
+        speed = isSprinting ? sprintSpeed : walkSpeed;
         direction = GetAxis(_lastDirection, direction);
         _lastDirection = direction;
 
         _direction = direction;
-        _lookAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-        _targetAngle = _lookAngle + lookDirTransform.eulerAngles.y - startRotation;
-        _angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetAngle, ref _turnSmoothVelocity, TurnSmoothTime);
-        
+
         if (isGrounded && _velocity.y < 0f)
         {
             //Reset the velocity that it had accumulated while on the ground
@@ -58,16 +55,36 @@ public class Movement : MonoBehaviour
         //if not grounded (or most likely jumping), change movement
         if (!isGrounded)
         {
+            _lookAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            _targetAngle = _lookAngle + lookDirTransform.eulerAngles.y - startRotation;
             transform.rotation = Quaternion.Euler(0f, _targetAngle, 0f);
             lookDirTransform.localEulerAngles = new Vector3(lookDirTransform.eulerAngles.x, -_lookAngle, 0);
             //Allows the player to have a slight amount of control while in the air determined by jumpControlModifier
             _moveDir += Quaternion.Euler(0f, _targetAngle, 0f) * direction * (JumpControlModifier * Time.deltaTime);
             _character.Move(speed * Time.deltaTime * _moveDir);
         }
-        else
+        //Changes to walking 3rd person mode
+        else if (isADS)
+        {
+            speed = walkSpeed;
+            if (direction.z < 0.01f)
+            {
+                speed *= walkBackMultiplier;
+            }
+
+            //point player at camera
+            _targetAngle = lookDirTransform.eulerAngles.y - startRotation;
+            _moveDir = Quaternion.Euler(0f, _targetAngle, 0f) * direction;
+            lookDirTransform.localEulerAngles = new Vector3(lookDirTransform.eulerAngles.x, 0, 0);
+            //put if(direction.magnitude > 0.1f) to make the player not rotate while standing still.
+            transform.rotation = Quaternion.Euler(0f, _targetAngle, 0f);
+            _character.Move(speed * Time.deltaTime * _moveDir);
+        }
+        else if(!isAttacking)
         {
             //point player relative to the camera based on which direction they are moving
-            
+            _lookAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            _targetAngle = _lookAngle + lookDirTransform.eulerAngles.y - startRotation;
             //if the player isn't moving, this will be 0, 0, 0 which is intended
             _moveDir = Quaternion.Euler(0f, _targetAngle, 0f) * direction;
 

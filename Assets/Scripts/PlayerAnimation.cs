@@ -12,12 +12,14 @@ public class PlayerAnimation : MonoBehaviour
     private int _isSprinting;
     private int _isGrounded;
     private int _isAttacking;
+    public int shouldMove;
     void Start()
     {
         _isMoving = Animator.StringToHash("isMoving");
         _isSprinting = Animator.StringToHash("isSprinting");
         _isGrounded = Animator.StringToHash("isGrounded");
         _isAttacking = Animator.StringToHash("isAttacking");
+        shouldMove = Animator.StringToHash("shouldMove");
     }
 
     // Update is called once per frame
